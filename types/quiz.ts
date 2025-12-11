@@ -1,3 +1,4 @@
+//types/quiz.ts
 export interface Question {
   id: number;
   question: string;

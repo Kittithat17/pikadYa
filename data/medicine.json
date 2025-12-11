@@ -1,0 +1,63 @@
+{
+  "พิกัดยา 7": {
+    "พิกัดสัตตะเขา": [
+      { "name": "เขาวัว",      "image": "khao_wua.png",         "detail": "" },
+      { "name": "เขาควาย",    "image": "khao_kwai.png",        "detail": "" },
+      { "name": "เขากระทิง",  "image": "khao_krathing.png",    "detail": "" },
+      { "name": "เขากวาง",    "image": "khao_kwang.png",       "detail": "" },
+      { "name": "เขาแพะ",      "image": "khao_pae.png",         "detail": "" },
+      { "name": "เขาแกะ",      "image": "khao_kae.png",         "detail": "" },
+      { "name": "เขาเลียงผา", "image": "khao_liangpha.png",    "detail": "" }
+    ],
+
+    "พิกัดสัตตะปะระเหมะ": [
+      { "name": "ต้นตำแยตัวผู้",  "image": "tanyae_male.png",    "detail": "" },
+      { "name": "ต้นตำแยตัวเมีย", "image": "tanyae_female.png",  "detail": "" },
+      { "name": "ต้นก้นปิด",      "image": "konpid.png",         "detail": "" },
+      { "name": "ลูกกระวาน",      "image": "luk_krwan.png",      "detail": "" },
+      { "name": "โกฐกระดูก",      "image": "got_kraduk.png",     "detail": "" },
+      { "name": "ลูกรักเทศ",      "image": "luk_rakthet.png",    "detail": "" },
+      { "name": "ตรีผลาวะสัง",    "image": "triphalawasang.png", "detail": "" }
+    ],
+
+    "พิกัดสัตตะโลหะ": [
+      { "name": "รากทองกวาว",      "image": "thongkwaw_root.png",      "detail": "" },
+      { "name": "รากทองหลางหนาม",  "image": "thonglang_nam_root.png",  "detail": "" },
+      { "name": "รากทองหลางใบมน",  "image": "thonglang_baemon_root.png","detail": "" },
+      { "name": "รากทองโหลง",      "image": "thonglong_root.png",      "detail": "" },
+      { "name": "รากทองพันชั่ง",   "image": "thongpanchang_root.png",  "detail": "" },
+      { "name": "รากฟักทอง",        "image": "fakthong_root.png",       "detail": "" },
+      { "name": "รากต้นใบทอง",      "image": "baitong_root.png",        "detail": "" }
+    ],
+
+    "พิกัดสัตตะโกฐ": [
+      { "name": "โกฐสอ",        "image": "got_so.png",         "detail": "" },
+      { "name": "โกฐเขมา",      "image": "got_khema.png",      "detail": "" },
+      { "name": "โกฐหัวบัว",    "image": "got_hua_bua.png",    "detail": "" },
+      { "name": "โกฐเชียง",     "image": "got_chiang.png",     "detail": "" },
+      { "name": "โกฐจุฬาลัมพา", "image": "got_chulalampha.png","detail": "" },
+      { "name": "โกฐก้านพร้าว", "image": "got_kanphrao.png",  "detail": "" },
+      { "name": "โกฐกระดูก",    "image": "got_kraduk.png",     "detail": "" }
+    ],
+
+    "พิกัดสัตตะเทียน": [
+      { "name": "เทียนดำ",         "image": "thian_dam.png",        "detail": "" },
+      { "name": "เทียนแดง",        "image": "thian_daeng.png",      "detail": "" },
+      { "name": "เทียนขาว",        "image": "thian_khaw.png",       "detail": "" },
+      { "name": "เทียนข้าวเปลือก", "image": "thian_khawplueak.png", "detail": "" },
+      { "name": "เทียนตาตั๊กแตน",  "image": "thian_tataktan.png",   "detail": "" },
+      { "name": "เทียนสัตตบุษย์",  "image": "thian_sattabutr.png",  "detail": "" },
+      { "name": "เทียนเยาวพาณี",   "image": "thian_yaowaphani.png", "detail": "" }
+    ],
+
+    "พิกัดเกสรทั้ง 7": [
+      { "name": "ดอกมะลิ",       "image": "dok_mali.png",      "detail": "" },
+      { "name": "ดอกพิกุล",      "image": "dok_pikun.png",     "detail": "" },
+      { "name": "ดอกบุนนาค",    "image": "dok_bunnak.png",    "detail": "" },
+      { "name": "ดอกสารภี",     "image": "dok_saraphi.png",   "detail": "" },
+      { "name": "เกสรบัวหลวง",  "image": "keson_bualuang.png","detail": "" },
+      { "name": "ดอกจำปา",      "image": "dok_champa.png",    "detail": "" },
+      { "name": "ดอกกระดังงา",  "image": "dok_kradangnga.png","detail": "" }
+    ]
+  }
+}
