@@ -2,6 +2,7 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 import data from "../../../data/medicine.json";
+// import pic from "@assets/";
 
 export default function GroupPage() {
   const { group } = useLocalSearchParams();
@@ -18,6 +19,7 @@ export default function GroupPage() {
           key={cat}
           style={{
             padding: 15,
+            backgroundImage: "",
             backgroundColor: "#ddd",
             marginTop: 15,
             borderRadius: 20,

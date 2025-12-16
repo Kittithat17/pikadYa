@@ -1,50 +1,77 @@
 import { useLocalSearchParams } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import data from "../../../../data/medicine.json";
 
+// 1. Define the shape of your data
+interface Herb {
+  name: string;
+  image: string;
+  detail: string;
+}
+
+// 2. Define the shape of your route parameters
+type HerbPageParams = {
+  group: string;
+  item: string;
+  herb: string;
+};
+
 export default function HerbPage() {
-  const { group, item, herb } = useLocalSearchParams();
+  // 3. Use Generics for strict typing on params
+  const { group, item, herb } = useLocalSearchParams<HerbPageParams>();
+  const insets = useSafeAreaInsets();
 
-  if (
-    typeof group !== "string" ||
-    typeof item !== "string" ||
-    typeof herb !== "string"
-  )
+  // Guard clause: Ensure params exist and are strings
+  if (typeof group !== "string" || typeof item !== "string" || typeof herb !== "string") {
     return null;
+  }
 
-  // ✅ TYPE SAFE
-  const groupData = data[group as keyof typeof data];
+  // 4. Safe Data Access in TypeScript
+  // We treat 'data' as a flexible Record to avoid "Element implicitly has an 'any' type" errors.
+  const typedData = data as Record<string, Record<string, Herb[]>>;
+
+  const groupData = typedData[group];
+  
+  // If group not found
   if (!groupData) return null;
 
-  // ✅ TYPE SAFE
-  const herbs =
-    groupData[item as keyof typeof groupData] || [];
-
+  const herbs = groupData[item] || [];
   const herbData = herbs.find((h) => h.name === herb);
 
-  if (!herbData) {
-    return (
-      <View style={{ padding: 20 }}>
+  // 5. Handle "Not Found" state
+  if (!herbData) {    
+    return (    
+      <View style={{ flex: 1, backgroundColor: 'white', paddingTop: insets.top, paddingHorizontal: 20 }}>
         <Text style={{ fontSize: 20, color: "red" }}>
           ไม่พบข้อมูลสมุนไพร: {herb}
         </Text>
       </View>
     );
-  }
+  }   
 
   return (
-    <ScrollView style={{ flex: 1, padding: 20 }}>
-      {/* ชื่อสมุนไพร */}
-      <Text style={{ fontSize: 35, fontWeight: "bold" }}>
-        ชื่อ:{herbData.name}
-      </Text>
+    <View style={{ flex: 1, backgroundColor: 'white' }}>
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{
+          padding: 20,
+          // 6. Apply safe area insets via padding
+          paddingTop: insets.top + 20, 
+          paddingBottom: insets.bottom + 20,
+        }}
+      >
+        <Text style={{ fontSize: 35, fontWeight: "bold" }}>
+          ชื่อ: {herbData.name}
+        </Text>
 
-      {/* ไม่มีรูปตอนนี้ → ข้ามไป */}
+        {/* Image placeholder */}
+        {/* <Image source={{ uri: herbData.image }} ... /> */}
 
-      {/* รายละเอียดสมุนไพร */}
-      <Text style={{ marginTop: 20, fontSize: 18, lineHeight: 26 }}>
-        สรรพคุณ:{herbData.detail || "ยังไม่มีรายละเอียด"}
-      </Text>
-    </ScrollView>
+        <Text style={{ marginTop: 20, fontSize: 18, lineHeight: 26 }}>
+          สรรพคุณ: {herbData.detail || "ยังไม่มีรายละเอียด"}
+        </Text>
+      </ScrollView>
+    </View>
   );
 }
