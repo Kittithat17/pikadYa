@@ -11,7 +11,7 @@ export default function ItemDetail() {
   const groupData = data[group as keyof typeof data];
   if (!groupData) return null;
 
-  const herbs = groupData[item as keyof typeof groupData] || [];
+  const herbs: { name: string }[] = groupData[item as keyof typeof groupData] || [];
 
   return (
     <View style={{ flex: 1, padding: 20, }}>
