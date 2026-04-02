@@ -21,7 +21,7 @@ type MenuRowProps = {
 
 export default function HomeScreen() {
   return (
-    <LinearGradient colors={["#f7e9b3", "#f5d742"]} style={styles.container}>
+    <LinearGradient colors={["#f5d742", "#f7e9b3"]} style={styles.container}>
       <Text style={styles.title}>พิกัดยา</Text>
 
       <MenuRow

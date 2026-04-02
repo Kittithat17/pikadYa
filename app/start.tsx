@@ -1,12 +1,13 @@
 //app/start.tsx
+import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function Startpage() {
   const groups = ["พิกัดยา 5", "พิกัดยา 7", "พิกัดยา 9", "พิกัดยา 10", "พิกัดยาพิเศษ"];
 
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={["#f5d742", "#f7e9b3"]} style={styles.container}>
       <Text style={styles.title}>พิกัดยา</Text>
 
       {groups.map((g) => (
@@ -18,7 +19,7 @@ export default function Startpage() {
           <Text style={styles.text}>{g}</Text>
         </TouchableOpacity>
       ))}
-    </View>
+    </LinearGradient>
   );
 }
 

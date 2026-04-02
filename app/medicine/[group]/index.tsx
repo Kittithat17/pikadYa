@@ -1,6 +1,7 @@
 //medicine/[group]/index.tsx
+import { LinearGradient } from "expo-linear-gradient";
 import { router, useLocalSearchParams } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import data from "../../../data/medicine.json";
 // import pic from "@assets/";
 
@@ -9,7 +10,7 @@ export default function GroupPage() {
   const categories = Object.keys(data[group as keyof typeof data]);
   
   return (
-    <View style={{ flex: 1, padding: 20 }}>
+    <LinearGradient colors={["#f5d742", "#f7e9b3"]} style={{ flex: 1, padding: 20 }}>
       <Text style={{ fontSize: 60, fontWeight: "900", textAlign: "center", marginTop: 90 }}>
         {group}
       </Text>
@@ -30,6 +31,6 @@ export default function GroupPage() {
           <Text style={{ textAlign: "center", fontSize: 20 }}>{cat}</Text>
         </TouchableOpacity>
       ))}
-    </View>
+    </LinearGradient>
   );
 }

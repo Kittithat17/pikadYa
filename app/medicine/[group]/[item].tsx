@@ -1,6 +1,7 @@
 // medicine/[group]/[item].tsx
+import { LinearGradient } from "expo-linear-gradient";
 import { router, useLocalSearchParams } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import data from "../../../data/medicine.json";
 
 export default function ItemDetail() {
@@ -14,7 +15,7 @@ export default function ItemDetail() {
   const herbs: { name: string }[] = groupData[item as keyof typeof groupData] || [];
 
   return (
-    <View style={{ flex: 1, padding: 20, }}>
+    <LinearGradient colors={["#f5d742", "#f7e9b3"]} style={{ flex: 1, padding: 20, }}>
       <Text style={{ fontSize: 39, fontWeight: "bold" ,marginTop: 70,textAlign: "center" }}>{item}</Text>
 
       {herbs.map((h, i) => (
@@ -35,6 +36,6 @@ export default function ItemDetail() {
           <Text style={{ fontSize: 20,textAlign: "center" }}>{h.name}</Text>
         </TouchableOpacity>
       ))}
-    </View>
+    </LinearGradient>
   );
 }

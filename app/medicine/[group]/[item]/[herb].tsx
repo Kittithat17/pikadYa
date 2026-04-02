@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { useLocalSearchParams } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -51,7 +52,7 @@ export default function HerbPage() {
   }   
 
   return (
-    <View style={{ flex: 1, backgroundColor: 'white' }}>
+    <LinearGradient colors={["#f5d742", "#f7e9b3"]} style={{ flex: 1, backgroundColor: 'white' }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={{
@@ -72,6 +73,6 @@ export default function HerbPage() {
           สรรพคุณ: {herbData.detail || "ยังไม่มีรายละเอียด"}
         </Text>
       </ScrollView>
-    </View>
+    </LinearGradient>
   );
 }
